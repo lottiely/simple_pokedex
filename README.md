@@ -1,1 +1,3 @@
-# simple_pokedex
+# A Simple Pokedex
+
+Details soon... >w>
