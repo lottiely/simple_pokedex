@@ -1,0 +1,33 @@
+# Changelog
+
+## 2019-Jun-19
+
+### Added
+- pipenv install requests
+
+## 2019-Oct-14
+
+### Added
+- test script taking information of Ninetales from PokeAPI and parsing that data
+- templates: home.html, pokedata.html
+- pokedata.html outputs hardcoded information on Ninetales
+
+### Roadblocks
+- Forgot about how to parse through an array of objects EX:
+pokemon = [{
+        'name' = 'name',
+        'flavortext' = 'blah blah blah'
+    },
+    {
+        'name' = 'name',
+        'flavortext' = 'blah blah blah'
+    }];
+
+## 2019 Oct 16
+
+### Added
+- Pass a title to web pages, but if no title was passed, used default in html templates
+- Template Inheritence: Created a base templates
+- Added Bootstrap Starter template (bootstrap scripts and metadata)
+- {% load static %} will allow for loading the files in static folder
+- Added appearance url

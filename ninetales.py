@@ -1,20 +1,30 @@
 import requests
 import json
 
-response = requests.get("https://pokeapi.co/api/v2/pokemon-species/ninetales/")
+def retrieveFromPokeAPI():
 
-print(response.status_code)
+    # Retrieve flavortext
+    response = requests.get("https://pokeapi.co/api/v2/pokemon-species/ninetales/")
 
-ninetalesobj = response.json()
-flavortext = ""
+    ninetalesobj = response.json()
+    flavortext = ""
 
-for x in ninetalesobj["flavor_text_entries"]:
-    if():
-        
+    for x in ninetalesobj["flavor_text_entries"]:
+        if(x["language"]["name"] == "en" and x["version"]["name"] == "firered"):
+            flavortext = x["flavor_text"]
 
-print(ninetalesobj["flavor_text_entries"][0]["flavor_text"])
+    # Retrieve appearance
+    response = requests.get("https://pokeapi.co/api/v2/pokemon/ninetales")
 
-#for x in ninetalesobj["flavor_text_entries"]:
-#    flavortext = x[0].flavor_text
+    ninetalesobj = response.json()
+    appearanceURL = ninetalesobj["sprites"]["front_default"]
 
-#print(json.dumps(response.json(), indent=2))
+    pokemondata = {
+        'name': 'Ninetales',
+        'appearanceURL' : appearanceURL,
+        'flavortext': flavortext
+    }
+    
+    print(flavortext)
+
+retrieveFromPokeAPI()

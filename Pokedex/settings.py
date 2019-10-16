@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pokedexapp',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +84,13 @@ DATABASES = {
         'PASSWORD': cfg.credentials.get('password'),
         'HOST': 'localhost',
         'PORT': '5432',
+    }
+}
+
+CACHES = {
+    'default':{
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'pokecache',
     }
 }
 

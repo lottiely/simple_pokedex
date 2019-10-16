@@ -1,0 +1,12 @@
+{% extends "pokedexapp/base.html" %}
+{% block content %}
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="title-container">
+                <h2><a class="article-title" href="#">{{ pokemon.name }}</a></h2>
+            </div>
+            <img align = "left" src={{ pokemon.appearanceURL }} alt="Ninetales">
+            <p class="article-content">{{ pokemon.flavortext }}</p>
+        </div>
+    </article>
+{% endblock content %}
