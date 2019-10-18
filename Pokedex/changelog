@@ -31,3 +31,14 @@ pokemon = [{
 - Added Bootstrap Starter template (bootstrap scripts and metadata)
 - {% load static %} will allow for loading the files in static folder
 - Added appearance url
+
+## 2019 Oct 17
+
+### Added
+- Added Pokemon number, genus, and type 
+- Created Pokemon Model
+- Inputted Ninetales data in DB
+- Updated home.html to have search bar 
+- Added search functionality to search bar 
+- Created PokeAdmin
+- Added favicon

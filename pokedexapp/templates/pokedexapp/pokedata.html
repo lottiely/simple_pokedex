@@ -1,12 +1,24 @@
 {% extends "pokedexapp/base.html" %}
 {% block content %}
-    <article class="media content-section">
+    <article class="media data content-section">
         <div class="media-body">
             <div class="title-container">
-                <h2><a class="article-title" href="#">{{ pokemon.name }}</a></h2>
+                {% if pokemon %}
+                <h2 class="article-title"><p class="article-title">{{ pokemon.name }}</p> #{{ pokemon.gameIndex }}</h2>
+                {% else %}
+                <h2 class="article-title"><p class="article-title">Whoops!!</p></h2>
+                {% endif%}
             </div>
-            <img align = "left" src={{ pokemon.appearanceURL }} alt="Ninetales">
-            <p class="article-content">{{ pokemon.flavortext }}</p>
+            {% if pokemon %}
+                <div class="article-metadata">
+                    <span>{{ pokemon.types }}</span>
+                    <small class="text-muted">{{ pokemon.genus }}</small>
+                </div>
+                <img class = "poke-img" align = "left" src={{ pokemon.appearanceURL }} alt="poke-img">
+                <p class="article-content">{{ pokemon.flavortext }}</p>
+            {% else %}
+                <p class="article-content">I don't think that Pokemon has been discovered yet!</p>
+            {% endif %}
         </div>
     </article>
 {% endblock content %}

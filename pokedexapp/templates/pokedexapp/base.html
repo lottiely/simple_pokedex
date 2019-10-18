@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
         <link rel="stylesheet" type="text/css" href="{% static 'pokedexapp/main.css' %}">
+        <link rel="icon" type="image/x-icon" href="{% static 'pokedexapp/pokeball.ico' %}"/>
 
         {% if title %}
             <title>{{ title }}</title>
@@ -29,7 +30,6 @@
                     <div class="collapse navbar-collapse" id="navbarToggle">
                         <div class="navbar-nav mr-auto">
                         <a class="nav-item nav-link" href="{% url 'pokedex-home' %}">Home</a>
-                        <a class="nav-item nav-link" href="{% url 'pokemon-data'%}">Pokemon</a>
                         </div>
                         <!-- Navbar Right Side -->
                         <div class="navbar-nav">
@@ -48,13 +48,11 @@
                 </div>
                 <div class="col-md-4">
                     <div class="content-section">
-                        <h3>Our Sidebar</h3>
-                        <p class='text-muted'>You can put any information here you'd like.
+                        <h3>Sidebar</h3>
+                        <p class='text-muted'>Look back on previous searches or read the announcements
                         <ul class="list-group">
-                            <li class="list-group-item list-group-item-light">Latest Posts</li>
+                            <li class="list-group-item list-group-item-light">Recent Searches</li>
                             <li class="list-group-item list-group-item-light">Announcements</li>
-                            <li class="list-group-item list-group-item-light">Calendars</li>
-                            <li class="list-group-item list-group-item-light">etc</li>
                         </ul>
                         </p>
                     </div>
