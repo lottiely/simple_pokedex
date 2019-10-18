@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import Pokedex.settings_local as cfg
+import settings_local as cfg
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -27,7 +27,7 @@ SECRET_KEY = cfg.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://simplepokedexapp.herokuapp.com/']
+ALLOWED_HOSTS = ['simplepokedexapp.herokuapp.com']
 
 
 # Application definition
