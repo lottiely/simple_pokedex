@@ -1,0 +1,107 @@
+  
+body {
+    background: #fafafa;
+    color: #333333;
+    margin-top: 5rem;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #4d4646;
+  }
+  
+  ul {
+    margin: 0;
+  }
+  
+  .bg-bar {
+    background-color: #E25357;
+  }
+  
+  .site-header .navbar-nav .nav-link {
+    color: #343434;
+    font-weight: bold;
+  }
+  
+  .site-header .navbar-nav .nav-link:hover {
+    color: #ffffff;
+  }
+  
+  .content-section {
+    padding: 10px 20px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+
+  .data {
+    background: #ffffff;
+    border: 1px solid #dddddd;
+  }
+
+  .title-container{
+    text-align:center;
+  }
+  
+  .article-title {
+    display:inline-block;
+    color: #444444;
+  }
+  
+  h2.article-title {
+    color: #808080;
+  }
+  
+  .article-content {
+      padding: 15px;
+  }
+  
+  .article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 16px;
+  }
+  
+  .article-metadata {
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3
+  }
+
+  p.article-metadata{
+    display: inline-block;
+    padding:0;
+  }
+  
+  .article-svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+  }
+  
+  .account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+  }
+  
+  .account-heading {
+    font-size: 2.5rem;
+  }
+
+  form{
+    display: flex;
+    border: 2px solid gray;
+    box-sizing: border-box;
+  }
+
+  input{
+    width:100%;
+  }
+
+  input:focus {
+    outline: 2px solid #E25357
+  }
+
+  input, label{
+    padding: 5px;
+  }
