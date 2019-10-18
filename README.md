@@ -1,13 +1,11 @@
 # A Simple Pokedex
 
-Details soon... >w>
+A Generation 1 Pokedex. Just type in the name of the Pokemon you're searching for, and the Pokedex can tell you all about it.
 
 ## Design
 - Database hosted on localhost because this project is just for educational purposes.
 
-### Notable Variables
-`gameIndex ` Game index of the Pokemon. Retrieved from PokeAPI. 
-> Default value : -1
+- Data retrieved from PokeAPI and is based off of FireRed version 
 
 ## Related References
 - [Corey Shafer](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g)  Python Django Tutorial Series
