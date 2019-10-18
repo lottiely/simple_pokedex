@@ -1,43 +1,53 @@
+# This is a test script to test the functionality of requesting from PokeAPI
+
 import requests
 import json
 
-def retrieveFromPokeAPI():
+def retrieveFromPokeAPI(pokemon_id):
+    species_uri = "https://pokeapi.co/api/v2/pokemon-species/"
 
+    pokemon_uri = "https://pokeapi.co/api/v2/pokemon/"
+    
     # Retrieve flavortext, genus
-    response = requests.get("https://pokeapi.co/api/v2/pokemon-species/ninetales/")
+    response = requests.get(species_uri + pokemon_id)
 
-    ninetalesobj = response.json()
+    print(species_uri + pokemon_id)
+
+    if response.status_code == 200:
+        data = response.json()
+    else:
+        return ""
+
     flavortext = ""
     genus = ""
 
-    for x in ninetalesobj["flavor_text_entries"]:
-        if(x["language"]["name"] == "en" and x["version"]["name"] == "firered"):
+    for x in data["flavor_text_entries"]:
+        if(x["language"]["name"] == "en"):
             flavortext = x["flavor_text"]
+            break
     
-    for x in ninetalesobj["genera"]:
+    for x in data["genera"]:
         if(x["language"]["name"] == "en"):
             genus = x["genus"]
 
     # Retrieve game index, appearance
-    response = requests.get("https://pokeapi.co/api/v2/pokemon/ninetales")
+    response = requests.get(pokemon_uri + pokemon_id)
 
-    ninetalesobj = response.json()
+    if response.status_code == 200:
+        data = response.json()
+    else:
+        return ""
 
-    appearanceURL = ninetalesobj["sprites"]["front_default"] 
-
-    gameIndex = -1
-
+    name = data['name']
+    appearanceURL = data["sprites"]["front_default"] 
+    gameIndex = f'{data["game_indices"][0]["game_index"]:03}'
     types = []
 
-    for x in ninetalesobj["game_indices"]:
-        if(x["version"]["name"] == "firered"):
-            gameIndex = f'{x["game_index"]:03}'
-
-    for x in ninetalesobj["types"]:
+    for x in data["types"]:
         types.append(x["type"]["name"].upper())
 
     pokemondata = {
-        'name': 'Ninetales',
+        'name': name,
         'gameIndex': gameIndex, 
         'genus': genus,
         'appearanceURL': appearanceURL,
@@ -46,3 +56,5 @@ def retrieveFromPokeAPI():
     }
 
     return pokemondata
+
+print(json.dumps(retrieveFromPokeAPI("uxie"), indent=4))

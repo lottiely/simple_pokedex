@@ -11,13 +11,17 @@
             </div>
             {% if pokemon %}
                 <div class="article-metadata">
-                    <span>{{ pokemon.types }}</span>
+                    <span>
+                        {% for type in pokemon.types%}
+                            {{ type }}
+                        {% endfor %}
+                    </span>
                     <small class="text-muted">{{ pokemon.genus }}</small>
                 </div>
                 <img class = "poke-img" align = "left" src={{ pokemon.appearanceURL }} alt="poke-img">
                 <p class="article-content">{{ pokemon.flavortext }}</p>
             {% else %}
-                <p class="article-content">I don't think that Pokemon has been discovered yet!</p>
+                <p class="article-content">There was an error processing your search! Either that or that Pokemon doesn't exist yet!</p>
             {% endif %}
         </div>
     </article>

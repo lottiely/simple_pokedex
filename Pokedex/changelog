@@ -42,3 +42,7 @@ pokemon = [{
 - Added search functionality to search bar 
 - Created PokeAdmin
 - Added favicon
+
+## 2019 Oct 18
+- Removed use of database and Pokemon Model
+- Added requests to be sent to PokeAPI every time a user enters a name/ID 

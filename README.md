@@ -1,11 +1,14 @@
 # A Simple Pokedex
 
-A Generation 1 Pokedex. Just type in the name of the Pokemon you're searching for, and the Pokedex can tell you all about it.
+A Simple Pokedex Web Application. Just type in the name of the Pokemon you're searching for, and the Pokedex can tell you all about it.
 
 ## Design
-- Database hosted on localhost because this project is just for educational purposes.
+- Framework: Django
+- Data is retrieved from PokeAPI whenever user enters a pokemon name or number in the search bar.
+    - All flavor text is pulled from the first available English flavor text from PokeAPI.
+    - All game indices are pulled from the first available game index from PokeAPI
 
-- Data retrieved from PokeAPI and is based off of FireRed version 
+- Postgres database and Pokemon model were set up but were not used due to use being out of scope.... for now.
 
 ## Related References
 - [Corey Shafer](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g)  Python Django Tutorial Series
