@@ -13,8 +13,6 @@ def retrieveFromPokeAPI(pokemon_id):
     # Retrieve flavortext, genus
     response = requests.get(species_uri + pokemon_id)
 
-    print(species_uri + pokemon_id)
-
     if response.status_code == 200:
         data = response.json()
     else:
