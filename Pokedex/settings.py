@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import Pokedex.settings_local as cfg
+#import Pokedex.settings_local as cfg
 import django_heroku
 
 
