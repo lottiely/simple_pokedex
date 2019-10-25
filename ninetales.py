@@ -1,8 +1,13 @@
-# This is a test script to test the functionality of requesting from PokeAPI
+""" This is a test script to test the functionality of requesting from PokeAPI
+"""
 
 import requests
 import json
 
+""" 
+Given the pokemon id which can be a number or a name, a request for the pokemon data is made to pokeAPI.
+The output will be a pokemondata object with the name, game index, genus, appearance URL, flavor text, and type of the pokemon.
+"""
 def retrieveFromPokeAPI(pokemon_id):
     species_uri = "https://pokeapi.co/api/v2/pokemon-species/"
 

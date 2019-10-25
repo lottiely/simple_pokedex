@@ -6,6 +6,12 @@ import requests
 import json
 
 def retrieveFromPokeAPI(pokemon_id):
+    """
+        Given either a Pokemon name or game index, this method will concatnate the identifier to the PokeAPI URI
+        and make a get request for the Pokemon data. The output is a pokemonData object holding the name, game
+        index, genus, appearance URL, flavor text, and type of the Pokemon.
+        If the Pokemon isn't found, this method will return a null value.
+    """
     species_uri = "https://pokeapi.co/api/v2/pokemon-species/"
 
     pokemon_uri = "https://pokeapi.co/api/v2/pokemon/"
@@ -58,12 +64,20 @@ def retrieveFromPokeAPI(pokemon_id):
     return pokemondata
 
 def home(request):
+    """
+        The home view includes the search bar where the user can type the game index or the name of the Pokemon they want to look up.
+        Once the user enters their input, the page will route to the pokemonData page.
+    """
     context ={
         'title' : 'Pokedex'
     }
     return render(request, 'pokedexapp/home.html', context)
 
 def pokemonData(request):
+    """
+        This page will retrieve the user input from the home page and will make a get request from PokeAPI for the Pokemon data.
+        If the Pokemon data is found, this page will present the data to the user.
+    """
     query = request.GET.get('pokesearch').lower()
     #pokemon = Pokemon.objects.filter(name__iexact=query)
     pokemon = retrieveFromPokeAPI(query)
